@@ -6,7 +6,6 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.index;
-import views.search;
 
 import java.io.FileInputStream;
 
@@ -18,11 +17,6 @@ public class Application extends Controller {
 
     public static Result search() {
         return null;
-    }
-
-    public static void main(String[] args) {
-//        resolve();
-        System.out.println(search.render());
     }
 
     private static void resolve() {

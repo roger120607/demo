@@ -9,115 +9,66 @@ function initialize() {
 
     var map = new google.maps.Map($('.content')[0], mapOptions);
 
-    var markers = [];
-    var latLng1 = new google.maps.LatLng(34.277077, 108.946609);
-//    var latLng2 = new google.maps.LatLng(34.283077, 108.946609);
-//    var latLng3 = new google.maps.LatLng(34.203077, 108.946609);
-//    var latLng4 = new google.maps.LatLng(34.233077, 108.856609);
-//    var latLng5 = new google.maps.LatLng(34.333077, 109.006609);
-//    var latLng6 = new google.maps.LatLng(34.049245451403976, 108.60088298681637);
-//    var latLng7 = new google.maps.LatLng(34.5042927508917, 109.29061839941403);
+    var latLng1 = new google.maps.LatLng(34.192423,108.870649);
+    var latLng2 = new google.maps.LatLng(34.246433,108.866959);
 
     var infoBubble2 = new InfoBubble({
-        map: map,
-        content: '<div class="phoneytext">Some label</div>',
-        position: new google.maps.LatLng(34.297077, 108.946609),
-        shadowStyle: 0,
-        padding: 0,
-        backgroundColor: '#f8f8f8',
-        borderRadius: 4,
-        arrowSize: 10,
-        borderWidth: 2,
-        borderColor: '#bdbdbd',
-        disableAutoPan: false,
-        hideCloseButton: false,
-        arrowPosition: 30,
-        backgroundClassName: 'phoney',
-        arrowStyle: 0,
-        minWidth: 300,
-        maxWidth: 300,
-        minHeight: 200,
-        maxHeight: 200,
-        disableAnimation: true
+        map:map,
+        content:'<div class="phoneytext">Some label</div>',
+        position:new google.maps.LatLng(34.297077, 108.946609),
+        shadowStyle:0,
+        padding:0,
+        backgroundColor:'#f8f8f8',
+        borderRadius:5,
+        arrowSize:10,
+        borderWidth:3,
+        borderColor:'#bdbdbd',
+        disableAutoPan:false,
+        hideCloseButton:false,
+        arrowPosition:30,
+        backgroundClassName:'bubble',
+        arrowStyle:0,
+        minWidth:357,
+        maxWidth:357,
+        minHeight:180,
+        maxHeight:180,
+        disableAnimation:true
     });
 
     var marker1 = new google.maps.Marker({'position':latLng1});
+    var marker2 = new google.maps.Marker({'position':latLng2});
     marker1.setMap(map);
+    marker2.setMap(map);
     google.maps.event.addListener(marker1, "click", markerClickHandler);
+    google.maps.event.addListener(marker2, "click", markerClickHandler);
 
-    var iw = new google.maps.InfoWindow({
-        content: "Home For Sale"
-    });
-
-    function markerClickHandler() {
+    function markerClickHandler(d) {
+        var lat = d.latLng.lat() + 0.02;
+        var lng = d.latLng.lng();
+        infoBubble2.setPosition(new google.maps.LatLng(lat, lng));
+        infoBubble2.setContent($('#bubbleTemplate').html());
         infoBubble2.open();
-//        console.log("marker clicked.");
-//        iw.open(map, this);
-    }
-
-
-//    var marker2 = new google.maps.Marker({'position':latLng2});
-//    var marker3 = new google.maps.Marker({'position':latLng3});
-//    var marker4 = new google.maps.Marker({'position':latLng4});
-//    var marker5 = new google.maps.Marker({'position':latLng5});
-//    markers.push(marker1);
-//    markers.push(marker2);
-//    markers.push(marker3);
-//    markers.push(marker4);
-//    markers.push(marker5);
-
-//    var mapClustererStyles = [
-//        {
-//            textColor:'#ffffff',
-//            fontFamily:'Helvetica Neue, Helvetica, Arial, sans-serif',
-//            textSize:16,
-//            height:43,
-//            width:42,
-//            url:'/assets/images/rui/cluster-x1.png'
-//        }
-//    ];
-//
-//    var clusterIconCalculator = function (markers) {
-//        var i = 1;
-//        var text = markers.length.toString();
-//        return {
-//            text:text,
-//            index:i
-//        };
-//    };
-//
-//    var clusterOptions = {
-//        styles:mapClustererStyles,
-//        averageCenter:true,
-//        calculator:clusterIconCalculator,
-//        maxZoom:12,
-//        minimumClusterSize:1,
-//        gridSize:40
-//    };
-//
-//    var markerCluster = new MarkerClusterer(map, markers, clusterOptions);
-
-
-
-    google.maps.event.addListener(markerCluster, "click", clusterClickHandler);
-    function clusterClickHandler(c) {
-
-        if (c.getSize() == 1) {
-            map.setZoom(13);
-        } else {
-            map.setZoom(map.getZoom() + 2);
-        }
-        map.setCenter(c.getCenter());
-        markerCluster.setZoomOnClick(false);
     }
 
     google.maps.event.addListener(map, 'idle', mapIdleHandler);
-
     function mapIdleHandler() {
+    }
+
+    google.maps.event.addListener(map, 'click', mapClickHandler);
+    function mapClickHandler() {
+        infoBubble2.close();
     }
 
 }
 
 $(document).ready(function () {
+    var test = {
+        "title":"test"
+    }
+    var bubbleTemaplate = $('#bubbleTemplate').html();
+    var to_html = Mustache.to_html(bubbleTemaplate, test);
     initialize();
+//    var bubbleHtml = document.getElementById("bubble").innerHTML;
+//    console.log(document.getElementById("bubble").src);
+//    console.log(bubbleHtml);
 });

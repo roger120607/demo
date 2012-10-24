@@ -1,0 +1,59 @@
+.bubble {
+    width: 357px;
+    height: 180px;
+    background-color: #f8f8f8;
+    padding: 0;
+}
+
+.bubble_content {
+    width: 100%;
+    height: auto;
+    border: 0px solid black;
+    overflow: hidden;
+}
+
+.bubble_header {
+    width: 100%;
+    float: left;
+    height: auto;
+    padding: 0;
+    margin: 3px 0px;
+    overflow: hidden;
+    border: 0px solid black;
+}
+
+.bubble_title {
+    float: left;
+    font-size: 22px;
+    font-family: "黑体", "宋体",Arial;
+    border: 0px solid black;
+    margin: 0 10px;
+}
+
+.bubble_detail{
+    float: left;
+    font-size: 16px;
+    font-family: "黑体", "宋体",Arial;
+    border: 0px solid black;
+    margin: 5px 0px;
+    padding-top: 0px;
+}
+
+.bubble_left {
+    border: 0px solid black;
+    float: left;
+    margin: 0 10px;
+    padding: 0;
+}
+
+.bubble_right {
+    border: 0px solid black;
+    float: left;
+    font-size: 12px;
+    margin: 0 10 0 0;
+}
+
+.bubble_left img{
+    width: 100px;
+    height: 120px;
+}

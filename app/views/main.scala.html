@@ -6,7 +6,9 @@
     <head>
         <title>@title</title>
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bubble.css")">
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <meta charset="utf-8"/>
         <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
         <!-- google map api -->
         <script type="text/javascript"
@@ -16,8 +18,30 @@
         <script src="@routes.Assets.at("javascripts/markerclusterplus.js")" type="text/javascript"></script>
         <script src="@routes.Assets.at("javascripts/markerwithlabel.js")" type="text/javascript"></script>
         <script src="@routes.Assets.at("javascripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
-        <script src="@routes.Assets.at("javascripts/gmap.js")" type="text/javascript"></script>
         <script src="@routes.Assets.at("javascripts/infobubble.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("javascripts/mustache.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("javascripts/gmap.js")" type="text/javascript"></script>
+        <script id="bubbleTemplate" type="text/html">
+            <div class="bubble_header">
+                <div class="bubble_title">恒大城</div>
+                <div class="bubble_detail">
+                    <a href="">[详情]</a>
+                </div>
+            </div>
+            <div class="bubble_content">
+                <div class="bubble_left">
+                    <img src="http://localhost:8080/assets/images/icons/hengdacheng.jpg"/>
+                </div>
+                <div class="bubble_right">
+                    <div class="project_price">均价：6500</div>
+                    <div class="project_type">类型：普通住址</div>
+                    <div class="project_address">地址：高新丈八北路和大寨路十字西200米</div>
+                    <div class="project_phone">电话：4008882200</div>
+                    <div class="project_developer">开发商：陕西金泓投资有限公司</div>
+                    <div class="project_date">开盘时间：2009-12-10</div>
+                </div>
+            </div>
+        </script>
     </head>
     <header>
         I'm header.
