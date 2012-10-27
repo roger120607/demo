@@ -7,6 +7,7 @@
         <title>@title</title>
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bubble.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/panel.css")">
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
         <meta charset="utf-8"/>
         <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
@@ -44,6 +45,14 @@
                 </div>
             </div>
         </script>
+        <script id="result-template" type="text/html">
+            <li class="result-li">
+                <span class="result-name">{{name}}</span>
+                <span class="result-price">均价：{{averagePrice}}</span>
+                <br>
+                <span class="result-address">地址：{{address}}</span>
+            </li>
+        </script>
     </head>
     <body>
         <header>
@@ -61,7 +70,8 @@
                     </div>
                 </div>
                 <div id="search-result">
-
+                    <ul class="result-ul">
+                    </ul>
                 </div>
             </div>
         </div>

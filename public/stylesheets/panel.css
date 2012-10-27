@@ -1,0 +1,78 @@
+
+.panel {
+    width: auto;
+    height: 100%;
+    float: right;
+    padding: 10px 15px;
+    margin:0px;
+    float: left;
+}
+
+.panel h1 {
+    font-family: arial, helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: 100;
+    color: #262c33;
+    margin: 5px 0px;
+}
+
+.search-input {
+    width: 246px;
+    height: 15px;
+    float: left;
+    border: 1px solid #BDBDBD;
+    padding: 4px;
+    outline: 0;
+    box-shadow: 1px 2px 3px rgba(189, 189, 189, 0.3) inset, 1px 2px 3px rgba(189, 189, 189, 0.3);
+    border-radius: 0;
+    padding: 6px;
+}
+
+.search-arrow {
+    width: 45px;
+    height: 27px;
+    float: left;
+    border: 1px solid #BDBDBD;
+    border-left: 0;
+    cursor: pointer;
+    box-shadow: 1px 2px 3px rgba(189, 189, 189, 0.3);
+    background: #F3F3F3 url(/assets/images/rui/new-homes-icons.png) no-repeat 6px 5px;
+}
+
+#search-result {
+    padding: 0px;
+    margin: 0px;
+    float: left;
+    width: 100%;
+}
+
+.result-ul {
+    list-style: none;
+    padding: 0px;
+}
+
+.result-li {
+    border-bottom: dashed 1px #D4D4D4;
+    padding: 5px;
+}
+
+.result-li .result-name{
+    line-height: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: Verdana, Arial;
+}
+
+.result-li .result-price{
+    font-size: 13px;
+    font-weight: 500;
+    font-family: Verdana, Arial;
+    color: #b00
+}
+
+
+.result-li .result-address{
+    line-height: 25px;
+    color: #666;
+    font-size: 13px;
+}

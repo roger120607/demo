@@ -45,20 +45,23 @@ function initializeMarkers() {
                 });
                 markers.push(marker);
             });
+
+            initializeSearchResult();
         }
     });
 }
 
 function initializeSearchResult () {
-    var searchResult = $("#search-result");
-    searchResult.append("<ul>");
-    searchResult.append("<li>a</li>");
-    searchResult.append("</ul>");
+    var resultTemplate = $("#result-template").html();
+    _.each(projects, function(project){
+        var searchResult = Mustache.to_html(resultTemplate, project);
+        $(".result-ul").append(searchResult);
+    });
+
 }
 
 
 $(document).ready(function () {
     initializeMap();
     initializeMarkers();
-    initializeSearchResult();
 });
