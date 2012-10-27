@@ -1,3 +1,5 @@
+var $ = jQuery;
+
 var map;
 var markers = [];
 var projects = [];
