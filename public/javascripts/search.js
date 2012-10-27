@@ -4,15 +4,17 @@ $(function(){
 
         if($(".panel").hasClass("closed")){
             $(".panel").animate({right:"0px"}, 300,function(){
-//                google.maps.event.trigger(map, 'resize');
                 $(".panel").removeClass("closed");
+                $('.canvas').width("811px");
+                google.maps.event.trigger(map, 'resize');
             });
         }
         else{
 
             $(".panel").animate({right:"-333px"}, 300,function(){
-//                google.maps.event.trigger(map, 'resize');
+                $('.canvas').width("100%");
                 $(".panel").addClass("closed");
+                google.maps.event.trigger(map, 'resize');
             });
         }
 
@@ -51,6 +53,15 @@ $(function(){
             google.maps.event.trigger(map, 'click');
         }
 
+    });
+
+    $('.search-input').on('keydown', function () {
+        $('.cancel-search').show();
+    });
+
+    $('.cancel-search').on('click', function(){
+        $('.search-input').val("");
+        $('.search-arrow').click();
     });
 
 })

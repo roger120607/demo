@@ -34,6 +34,15 @@
     background: white url(/assets/images/rui/new-homes-icons.png) no-repeat 7px -220px;
 }
 
+.cancel-search {
+    position: absolute;
+    right: 70px;
+    top: 45px;
+    width: 9px;
+    cursor: pointer;
+    display: none;
+}
+
 .search-input {
     width: 246px;
     height: 15px;
