@@ -1,5 +1,23 @@
 $(function(){
 
+    $(".collapse").on('click', function(){
+
+        if($(".panel").hasClass("closed")){
+            $(".panel").animate({right:"0px"}, 300,function(){
+//                google.maps.event.trigger(map, 'resize');
+                $(".panel").removeClass("closed");
+            });
+        }
+        else{
+
+            $(".panel").animate({right:"-333px"}, 300,function(){
+//                google.maps.event.trigger(map, 'resize');
+                $(".panel").addClass("closed");
+            });
+        }
+
+    });
+
     $(".search-arrow").on('click', function(){
 
         var input = $(".search-input").val();
@@ -32,6 +50,7 @@ $(function(){
         }else{
             google.maps.event.trigger(map, 'click');
         }
+
     });
 
 })
