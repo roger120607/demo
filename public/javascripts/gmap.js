@@ -26,15 +26,18 @@ function initializeMarkers() {
     $.ajax('/getProjects', {
         success: function (data) {
             _.each(data.projects, function(project){
-                projects.push(project);
 
                 var latLng = new google.maps.LatLng(project.lat, project.lng);
                 var marker = new google.maps.Marker({'position':latLng});
                 marker.setMap(map);
-                google.maps.event.addListener(marker, "click", function(m){
+
+                project.marker = marker;
+                projects.push(project);
+
+                google.maps.event.addListener(marker, "click", function(){
                     var latOffset = 0.02 * Math.pow(0.5, map.getZoom() - 11);
-                    var lat = m.latLng.lat() + latOffset;
-                    var lng = m.latLng.lng();
+                    var lat = marker.getPosition().lat() + latOffset;
+                    var lng = marker.getPosition().lng();
                     infoBubble.setPosition(new google.maps.LatLng(lat, lng));
 
                     var bubbleTemaplate = $('#bubbleTemplate').html();
@@ -52,12 +55,7 @@ function initializeMarkers() {
 }
 
 function initializeSearchResult () {
-    var resultTemplate = $("#result-template").html();
-    _.each(projects, function(project){
-        var searchResult = Mustache.to_html(resultTemplate, project);
-        $(".result-ul").append(searchResult);
-    });
-
+    $('.search-arrow').click();
 }
 
 

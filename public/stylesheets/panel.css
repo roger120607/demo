@@ -54,6 +54,7 @@
 .result-li {
     border-bottom: dashed 1px #D4D4D4;
     padding: 5px;
+    cursor: pointer;
 }
 
 .result-li .result-name{
@@ -67,9 +68,8 @@
     font-size: 13px;
     font-weight: 500;
     font-family: Verdana, Arial;
-    color: #b00
+    color: #b00;
 }
-
 
 .result-li .result-address{
     line-height: 25px;

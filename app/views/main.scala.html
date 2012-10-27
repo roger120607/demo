@@ -23,6 +23,7 @@
         <script src="@routes.Assets.at("javascripts/infobubble.js")" type="text/javascript"></script>
         <script src="@routes.Assets.at("javascripts/mustache.js")" type="text/javascript"></script>
         <script src="@routes.Assets.at("javascripts/common.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("javascripts/search.js")" type="text/javascript"></script>
         <script src="@routes.Assets.at("javascripts/gmap.js")" type="text/javascript"></script>
         <script id="bubbleTemplate" type="text/html">
             <div class="bubble_header">
@@ -46,7 +47,7 @@
             </div>
         </script>
         <script id="result-template" type="text/html">
-            <li class="result-li">
+            <li class="result-li" onmouseover="mouseOverResult(this)" onmouseout="mouseOutResult(this)">
                 <span class="result-name">{{name}}</span>
                 <span class="result-price">均价：{{averagePrice}}</span>
                 <br>
@@ -65,7 +66,7 @@
             <div class="panel">
                 <div class="search-context">
                     <h1>您可以在此输入企业名称进行搜索定位：</h1>
-                    <input name="search" autocomplete="off" class="search-input" id="search-input">
+                    <input name="search" autocomplete="off" class="search-input" placeholder="Default: All">
                     <div class="search-arrow">
                     </div>
                 </div>
