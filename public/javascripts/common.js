@@ -3,8 +3,6 @@ var markers = [];
 var projects = [];
 
 var infoBubble = new InfoBubble({
-    content:'<div class="phoneytext">Some label</div>',
-    position:new google.maps.LatLng(34.297077, 108.946609),
     shadowStyle:0,
     padding:0,
     backgroundColor:'#f8f8f8',

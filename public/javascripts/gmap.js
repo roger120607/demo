@@ -1,13 +1,15 @@
 function initializeMap() {
+
     var mapOptions = {
         center:new google.maps.LatLng(34.277077, 108.946609),
         zoom:11,
         minZoom:4,
         maxZoom:20,
+        overviewMapControl:true,
         mapTypeId:google.maps.MapTypeId.ROADMAP
     };
 
-    map = new google.maps.Map($('.content')[0], mapOptions);
+    map = new google.maps.Map($('.canvas')[0], mapOptions);
 
     google.maps.event.addListener(map, 'idle', mapIdleHandler);
     function mapIdleHandler() {
@@ -47,8 +49,16 @@ function initializeMarkers() {
     });
 }
 
+function initializeSearchResult () {
+    var searchResult = $("#search-result");
+    searchResult.append("<ul>");
+    searchResult.append("<li>a</li>");
+    searchResult.append("</ul>");
+}
+
 
 $(document).ready(function () {
     initializeMap();
     initializeMarkers();
+    initializeSearchResult();
 });
