@@ -10,9 +10,8 @@ $(function(){
             });
         }
         else{
-
+            $('.canvas').width("100%");
             $(".panel").animate({right:"-333px"}, 300,function(){
-                $('.canvas').width("100%");
                 $(".panel").addClass("closed");
                 google.maps.event.trigger(map, 'resize');
             });
