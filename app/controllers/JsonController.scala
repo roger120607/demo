@@ -17,7 +17,7 @@ object JsonController extends Controller {
   def search = Action {
 
     val excelResolver = new ExcelResolver();
-    val result = excelResolver.resolve("/Users/twer/00_git/demo/conf/projects.xlsx")
+    val result = excelResolver.resolve("conf/projects.xlsx")
 
     val jsonResult = toJson(
       Map(
