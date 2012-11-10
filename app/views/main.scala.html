@@ -37,7 +37,7 @@
                     <img src="@routes.Assets.at("images/icons/{{imageName}}")/>
                 </div>
                 <div class="bubble_right">
-                    <div class="project_price">均价：{{averagePrice}}</div>
+                    <div class="project_price">污染指数：{{averagePrice}}</div>
                     <div class="project_type">类型：{{type}}</div>
                     <div class="project_address">地址：{{address}}</div>
                     <div class="project_phone">电话：{{telephone}}</div>
@@ -49,7 +49,7 @@
         <script id="result-template" type="text/html">
             <li class="result-li" onmouseover="mouseOverResult(this)" onmouseout="mouseOutResult(this)">
                 <span class="result-name">{{name}}</span>
-                <span class="result-price">均价：{{averagePrice}}</span>
+                <span class="result-price">污染指数：{{averagePrice}}</span>
                 <br>
                 <span class="result-address">地址：{{address}}</span>
             </li>
@@ -57,21 +57,14 @@
     </head>
     <body>
         <div class="header">
-            <h1>Demo</h1>
-            <div id="navigator">
-                <h4>
-                    <a href="" class="checked">首页</a> |
-                    <a href="" class="">功能介绍</a> |
-                    <a href="" class="">关于</a>
-                </h4>
-            </div>
+            <h1>重金属污染企业地理信息管理系统-演示案例</h1>
+
         </div>
         <div class="content">
             <div class="canvas">
             </div>
 
             <div class="panel">
-                <div class="collapse"></div>
                 <div class="search-context">
                     <h1>您可以在此输入企业名称进行搜索定位：</h1>
                     <input name="search" autocomplete="off" class="search-input" placeholder="Default: All">

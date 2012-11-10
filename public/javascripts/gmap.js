@@ -1,12 +1,12 @@
 function initializeMap() {
 
     var mapOptions = {
-        center:new google.maps.LatLng(34.277077, 108.946609),
-        zoom:11,
+        center:new google.maps.LatLng(34.361576, 107.232056),
+        zoom:10,
         minZoom:4,
         maxZoom:20,
         overviewMapControl:true,
-        mapTypeId:google.maps.MapTypeId.ROADMAP
+        mapTypeId:google.maps.MapTypeId.TERRAIN
     };
 
     map = new google.maps.Map($('.canvas')[0], mapOptions);
