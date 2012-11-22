@@ -1,11 +1,12 @@
 function initializeMap() {
 
     var mapOptions = {
-        center:new google.maps.LatLng(34.361576, 107.232056),
-        zoom:10,
+        center:new google.maps.LatLng(34.341576, 107.442056),
+        zoom:20,
         minZoom:4,
         maxZoom:20,
         overviewMapControl:true,
+        scaleControl: true,
         mapTypeId:google.maps.MapTypeId.TERRAIN
     };
 
